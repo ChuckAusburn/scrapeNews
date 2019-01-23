@@ -1,0 +1,53 @@
+{{!--<nav class="navbar navbar-default" style="margin: 0;">
+    <div class="container-fluid">
+        <div class="navbar-header navbar-left">
+            <h1>BleacherReport MongoScraper</h1>
+        </div>
+        <div class="navbar-header navbar-right">
+            <ul style="display: inline;">
+                <li class="btn btn-default"><a href="/">Home</a></li>
+                <li class="btn btn-default">
+                    <a href="/savedArticles">Saved Articles</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>--}}
+<div class="jumbotron" style="text-align: center;">
+    <h1>ScrapeNews</h1>
+    <h3></h3>
+    <div class="btn btn-default" id="scrapeNewArticles">Scrape New Article</div>
+</div>
+<div class="container">
+    <div id="articleContainer">
+        {{#each article}}
+        <div class="articleTitle panel panel-default" id={{this._id}}>
+            <div class="panel-body">
+                <a href={{this.link}} target="_blank">
+                    <h2>{{this.title}}</h2>
+                </a>
+                <div class="btn btn-primary save-article">Save article</div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+<div id="noNewArticlesModal" class="modal fade" role="dialog" style="text-align: center;">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h2 class="modal-title"><strong>We're sorry!</strong></h2>
+            </div>
+            <div class="modal-body">
+                <h3>There are no new articles available</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" id="save-note-btn" data-dismiss="modal">DISMISS</button>
+            </div>
+        </div>
+
+    </div>
+</div>
